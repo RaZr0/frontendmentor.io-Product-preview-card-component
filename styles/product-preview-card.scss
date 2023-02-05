@@ -1,0 +1,114 @@
+@import "./breakpoints";
+
+$boxBorderRadius: 10px;
+
+.product-preview-card {
+	display: flex;
+	@media screen and (min-width: $mobile) {
+		max-width: 600px;
+	}
+
+	@media screen and (max-width: $mobile) {
+		flex-direction: column;
+	}
+
+	.product-img img {
+		height: 100%;
+		@media screen and (max-width: $mobile) {
+			border-top-left-radius: $boxBorderRadius;
+			border-top-right-radius: $boxBorderRadius;
+		}
+
+		@media screen and (min-width: $mobile) {
+			border-start-start-radius: $boxBorderRadius;
+			border-end-start-radius: $boxBorderRadius;
+		}
+	}
+
+	.content {
+		@media screen and (max-width: $mobile) {
+			border-bottom-left-radius: $boxBorderRadius;
+			border-bottom-right-radius: $boxBorderRadius;
+		}
+
+		@media screen and (min-width: $mobile) {
+			border-end-end-radius: $boxBorderRadius;
+			border-start-end-radius: $boxBorderRadius;
+		}
+	}
+
+	@media screen and (min-width: $mobile) {
+		.product-img,
+		.content {
+			flex: 1 0 50%;
+		}
+	}
+
+	.content {
+		display: flex;
+		background-color: var(--netural-white);
+		padding: 32px;
+		flex-direction: column;
+		justify-content: space-between;
+
+		@media screen and (max-width: $mobile) {
+			padding: 24px;
+			gap: 24px;
+		}
+
+		@media screen and (min-width: $mobile) {
+			padding: 24px;
+		}
+
+		.type {
+			color: var(--netural-dark-grayish-blue);
+			font-size: 0.75rem;
+			letter-spacing: 5px;
+		}
+		.title {
+			font-family: Fraunces;
+			font-size: 2rem;
+			color: var(--netural-very-dark-blue);
+		}
+		.desc {
+			font-size: 0.875rem;
+			color: var(--netural-dark-grayish-blue);
+			line-height: 1.4375rem;
+		}
+		.price {
+			display: flex;
+			align-items: center;
+			gap: 0 19px;
+			.after-discount {
+				font-family: Fraunces;
+				font-size: 2rem;
+				color: var(--primary-dark-cyan);
+			}
+			.original {
+				font-size: 0.875rem;
+				color: var(--netural-dark-grayish-blue);
+			}
+		}
+
+		.add-to-cart {
+			display: flex;
+			justify-content: center;
+			gap: 0 11px;
+			align-items: center;
+			font-size: 14px;
+			font-weight: 700;
+			padding: 15px 0;
+			color: var(--netural-white);
+			background-color: var(--primary-dark-cyan);
+			border-radius: 8px;
+
+			&:hover {
+				background-color: var(--primary-darker-cyan);
+			}
+
+			i {
+				width: 14px;
+			}
+		}
+	}
+}

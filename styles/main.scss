@@ -1,0 +1,60 @@
+@import url(./reset.css);
+@import "./breakpoints";
+
+@font-face {
+	font-family: Montserrat;
+	src: url(../fonts/Montserrat-Medium.ttf);
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: Montserrat;
+	src: url(../fonts/Montserrat-Bold.ttf);
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: Fraunces;
+	src: url(../fonts/Fraunces_9pt-Bold.ttf);
+}
+
+:root {
+	--primary-dark-cyan: hsl(158, 36%, 37%);
+	--primary-darker-cyan: #1a4032;
+	--primary-cream: hsl(30, 38%, 92%);
+	--netural-very-dark-blue: hsl(212, 21%, 14%);
+	--netural-dark-grayish-blue: hsl(228, 12%, 48%);
+	--netural-white: hsl(0, 0%, 100%);
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Montserrat;
+	margin: 0;
+	background-color: var(--primary-cream);
+	display: flex;
+	min-height: 100vh;
+	justify-content: center;
+	align-items: center;
+
+	@media screen and (max-width: $mobile) {
+		padding: 28px 16px;
+	}
+}
+
+p {
+	font-size: 0.875rem;
+}
+
+img {
+	max-width: 100%;
+}
+
+button {
+	cursor: pointer;
+}
